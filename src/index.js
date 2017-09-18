@@ -12,10 +12,15 @@ program
 
 program
   .command('init <type>')
-  .description(pkg.description)
+  .description('init proj/page/mod to generator proj/page/mod')
   .action(function(type, command) {
-    console.log('\nWelcome to nowa ' + type + ' generator!\n');
-    inquirer.prompt(util.prompt(type)).then(function (answers) {
+    console.log('\nWelcome to react-reflux ' + type + ' generator!\n');
+    let prompts = util.prompt(type);
+    if(!prompts){
+      console.log(`\n${type} is not known, please use proj/page/mod\n`);
+      return
+    }
+    inquirer.prompt(prompts).then(function (answers) {
         var sourceDir = path.join(__dirname, 'templates', type);
         var targetDir = process.cwd();
         answers = util.answersFormat(answers)

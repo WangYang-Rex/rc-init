@@ -1,10 +1,13 @@
 {
-  "name": "wy-commander-test",
-  "version": "1.0.5",
-  "description": "test commander, project generator",
+  "name": "dd-cli",
+  "version": "1.0.6",
+  "description": "dd-cli commander, project generator",
   "main": "index.js",
+  "engines": {
+    "node": "*"
+  },
   "scripts": {
-    "test": "wy"
+    "test": "dd"
   },
   "author": "wangyang",
   "license": "ISC",
@@ -16,6 +19,6 @@
     "mkdirp": "^0.5.1"
   },
   "bin": {
-    "wy": "./bin/wy"
+    "dd": "./bin/dd"
   }
 }
